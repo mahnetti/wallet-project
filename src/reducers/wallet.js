@@ -5,6 +5,7 @@ import { ADD_WALLET } from '../actions';
 const INITIAL_WALLET = {
   expenses: [],
   currencies: [],
+  currency: 'BRL',
 };
 
 function wallet(state = INITIAL_WALLET, action) {

@@ -9,7 +9,7 @@ class Login extends React.Component {
     this.state = {
       email: '',
       password: '',
-      enableBtn: false,
+      enableBtn: true,
     };
   }
 
@@ -22,17 +22,20 @@ class Login extends React.Component {
   }
 
   validateLogin = () => {
-    const { email, password } = this.setState;
     const minLength = 6;
+    const { email, password, enableBtn } = this.setState;
     // const lengthPassword = password.length;
     const emailRegex = /^[a-z0-9.]+@[a-z0-9]+\.[a-z]+\.([a-z]+)?$/i;
     const validateEmail = emailRegex.test(email);
     // https://pt.stackoverflow.com/questions/1386/express%C3%A3o-regular-para-valida%C3%A7%C3%A3o-de-e-mail validação do email a partir da const
-    if (validateEmail && password.length >= minLength) {
-      this.setState({ enableBtn: true });
-    } else {
-      this.setState({ enableBtn: false });
-    }
+
+    this.setState(validateEmail && password.length > minLength ? !enableBtn : enableBtn);
+
+  //   if (validateEmail && password.length > minLength) {
+  //     this.setState({ enableBtn: true });
+  //   } else {
+  //     this.setState({ enableBtn: false });
+  //   }
   }
 
   handleChange = ({ target: { name, value } }) => {
@@ -73,7 +76,6 @@ class Login extends React.Component {
         <button
           type="submit"
           id="submit-btn"
-          name="submit-btn"
           onClick={ this.handleClick }
           disabled={ !enableBtn }
         >
