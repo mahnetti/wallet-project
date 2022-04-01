@@ -11,24 +11,24 @@ class WalletHeader extends React.Component {
           <h2>Trybe Wallet</h2>
           <div>
 
+            <b>E-mail:</b>
             <p
               data-testid="email-field"
             >
-              E-mail:
               { email }
             </p>
 
+            <b>Total:</b>
             <p
               data-testid="total-field"
             >
-              Total:
               { expenses.reduce((acc, index) => acc + index, 0) }
             </p>
 
+            <b>Currency:</b>
             <p
               data-testid="header-currency-field"
             >
-              Currency:
               { currency }
             </p>
 
