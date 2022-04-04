@@ -1,13 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { fetchCurrencies } from '../actions';
+// import { fetchCurrencies } from '../actions';
 
 class WalletHeader extends React.Component {
-  componentDidMount() {
-    const { getCurrencies } = this.props;
-    getCurrencies();
-  }
+  // componentDidMount() {
+  //   const { getCurrencies } = this.props;
+  //   getCurrencies();
+  // }
 
   render() {
     const { email, expenses } = this.props;
@@ -24,13 +24,13 @@ class WalletHeader extends React.Component {
           <p
             data-testid="total-field"
           >
-            {`Total expenses: ${expenses.reduce((acc, index) => acc + index, 0)}`}
+            {`Despesas totais: ${expenses.reduce((acc, index) => acc + index, 0)}`}
           </p>
 
           <p
             data-testid="header-currency-field"
           >
-            Currency:  BRL
+            Moeda:  BRL
           </p>
 
         </div>
@@ -43,12 +43,12 @@ WalletHeader.propTypes = {
   email: PropTypes.string.isRequired,
   expenses: PropTypes.number.isRequired,
   // currencies: PropTypes.string.isRequired,
-  getCurrencies: PropTypes.func,
-}.isRequired;
+  // getCurrencies: PropTypes.func,
+};
 
-const mapDispatchToProps = (dispatch) => ({
-  getCurrencies: (currencies) => dispatch(fetchCurrencies(currencies)),
-});
+// const mapDispatchToProps = (dispatch) => ({
+//   getCurrencies: (currencies) => dispatch(fetchCurrencies(currencies)),
+// });
 
 const mapStateToProps = (state) => ({
   email: state.user.email,
@@ -56,4 +56,4 @@ const mapStateToProps = (state) => ({
   // currencies: state.wallet.currency,
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(WalletHeader);
+export default connect(mapStateToProps, null)(WalletHeader);
