@@ -10,7 +10,7 @@ function user(state = INITIAL_STATE, action) {
   case NEW_LOGIN:
     return {
       ...state,
-      email: action.value,
+      email: action.email,
     };
   default:
     return state;
