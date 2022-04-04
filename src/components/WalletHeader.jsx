@@ -10,7 +10,7 @@ class WalletHeader extends React.Component {
   }
 
   render() {
-    const { email, currencies, expenses } = this.props;
+    const { email, expenses } = this.props;
     return (
       <header>
         <h2>Trybe Wallet</h2>
@@ -30,7 +30,7 @@ class WalletHeader extends React.Component {
           <p
             data-testid="header-currency-field"
           >
-            {`Currency: ${currencies}`}
+            Currency:  BRL
           </p>
 
         </div>
@@ -42,7 +42,7 @@ class WalletHeader extends React.Component {
 WalletHeader.propTypes = {
   email: PropTypes.string.isRequired,
   expenses: PropTypes.number.isRequired,
-  currencies: PropTypes.string.isRequired,
+  // currencies: PropTypes.string.isRequired,
   getCurrencies: PropTypes.func,
 }.isRequired;
 
@@ -53,7 +53,7 @@ const mapDispatchToProps = (dispatch) => ({
 const mapStateToProps = (state) => ({
   email: state.user.email,
   expenses: state.wallet.expenses,
-  currencies: state.wallet.currency,
+  // currencies: state.wallet.currency,
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(WalletHeader);
