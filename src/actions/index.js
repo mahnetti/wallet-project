@@ -10,14 +10,14 @@ export const addNewLogin = (email) => ({
   email,
 });
 
-export const getExpenses = (expenses) => ({
-  type: GET_EXPENSES,
-  expenses,
-});
-
 export const getCurrencies = (currencies) => ({
   type: GET_CURRENCIES,
   currencies,
+});
+
+export const getExpenses = (expenses) => ({
+  type: GET_EXPENSES,
+  expenses,
 });
 
 export function fetchCurrencies() {
@@ -29,5 +29,16 @@ export function fetchCurrencies() {
   };
 }
 
+export function fetchExpenses(expenses) {
+  return async (dispatch) => {
+    const fetchAPI = await fetch(URL);
+    const getCurrency = await fetchAPI.json();
+    delete getCurrency.USDT;
+    dispatch(getExpenses({ ...expenses, exchangeRates: getCurrency }));
+    // criando um objeto com a chava que preciso 'exchanGerates' com o valor do getCurrency
+  };
+}
+
 // https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Object/keys
 // https://stackoverflow.com/questions/3455405/how-do-i-remove-a-key-from-a-javascript-object
+// https://www.horadecodar.com.br/2020/12/11/remover-propriedade-de-objeto-javascript/ --- REMOVER SÓ A KEY USDT

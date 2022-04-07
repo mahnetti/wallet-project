@@ -3,16 +3,17 @@
 import { GET_CURRENCIES, GET_EXPENSES } from '../actions';
 
 const INITIAL_WALLET = {
-  expenses: [0],
+  expenses: [],
   currencies: ['BRL'],
 };
 
 function wallet(state = INITIAL_WALLET, action) {
+  console.log(action.expenses);
   switch (action.type) {
   case GET_EXPENSES:
     return {
       ...state,
-      expenses: action.expenses,
+      expenses: [...state.expenses, action.expenses],
     };
   case GET_CURRENCIES:
     return {

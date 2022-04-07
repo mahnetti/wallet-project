@@ -11,6 +11,12 @@ class WalletHeader extends React.Component {
 
   render() {
     const { email, expenses } = this.props;
+    console.log(expenses);
+    const objectExpenses = expenses.map(
+      (expense) => expense.exchangeRates[expense.currency].ask * expense.value,
+    ).reduce(
+      (acc, index) => Number(acc) + Number(index), 0,
+    ).toFixed(2);
     return (
       <header>
         <h2>Trybe Wallet</h2>
@@ -24,7 +30,7 @@ class WalletHeader extends React.Component {
           <p
             data-testid="total-field"
           >
-            {`Despesas totais: ${expenses.reduce((acc, index) => acc + index, 0)}`}
+            {objectExpenses}
           </p>
 
           <p
@@ -41,10 +47,10 @@ class WalletHeader extends React.Component {
 
 WalletHeader.propTypes = {
   email: PropTypes.string.isRequired,
-  expenses: PropTypes.number.isRequired,
-  // currencies: PropTypes.string.isRequired,
-  // getCurrencies: PropTypes.func,
-};
+  expenses: PropTypes.object,
+}.isRequired;
+// currencies: PropTypes.string.isRequired,
+// getCurrencies: PropTypes.func,
 
 // const mapDispatchToProps = (dispatch) => ({
 //   getCurrencies: (currencies) => dispatch(fetchCurrencies(currencies)),
