@@ -3,6 +3,8 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { fetchExpenses } from '../actions';
 
+const foodTag = 'Alimentação';
+
 class WalletForm extends React.Component {
   constructor() {
     super();
@@ -13,7 +15,7 @@ class WalletForm extends React.Component {
       description: '',
       currency: 'USD',
       method: 'Dinheiro',
-      tag: 'Alimentação',
+      tag: foodTag,
       // expensesRates: { },
     };
   }
@@ -36,7 +38,7 @@ class WalletForm extends React.Component {
       value: '',
       currency: 'USD',
       method: 'Dinheiro',
-      tag: 'Alimentação',
+      tag: foodTag,
       description: '',
     });
   }
@@ -121,7 +123,7 @@ class WalletForm extends React.Component {
             value={ tag }
             onChange={ this.handleChange }
           >
-            <option value="Alimentação">Alimentação</option>
+            <option value="Alimentação">{foodTag}</option>
             <option value="Lazer">Lazer</option>
             <option value="Trabalho">Trabalho</option>
             <option value="Transporte">Transporte</option>
