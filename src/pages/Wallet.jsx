@@ -14,7 +14,7 @@ class Wallet extends React.Component {
 
   render() {
     return (
-      <section>
+      <section className="containerHeader">
         <WalletHeader />
         <WalletForm />
         <TableExpenses />

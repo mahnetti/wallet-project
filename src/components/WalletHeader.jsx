@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import '../style/walletStyle.css';
 import { connect } from 'react-redux';
 // import { fetchCurrencies } from '../actions';
 
@@ -18,29 +19,31 @@ class WalletHeader extends React.Component {
       (acc, index) => Number(acc) + Number(index), 0,
     ).toFixed(2);
     return (
-      <header>
-        <h2>Trybe Wallet</h2>
-        <div>
+      <header className="walletHeader">
+        <section className="titleHeader">
+          <h2>GRINGOTTS</h2>
+        </section>
+        <div className="infoHeader">
           <p
             data-testid="email-field"
           >
             {`Email: ${email}`}
           </p>
-
+          {' '}
           <p
             data-testid="total-field"
           >
-            {objectExpenses}
+            {`Total: ${objectExpenses}`}
           </p>
-
+          {' '}
           <p
             data-testid="header-currency-field"
           >
             Moeda:  BRL
           </p>
-
         </div>
       </header>
+
     );
   }
 }

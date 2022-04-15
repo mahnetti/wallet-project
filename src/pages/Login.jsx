@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
+import '../style/loginStyle.css';
 import { addNewLogin } from '../actions';
 
 class Login extends React.Component {
@@ -46,42 +47,53 @@ class Login extends React.Component {
   render() {
     const { email, password, enableBtn } = this.state;
     return (
-      <form>
+      <div className="loginContainer">
+        <header className="headerName">
+          <img src="http://gringotesbank.weebly.com/uploads/3/1/3/5/3135981/9443522.gif?350" alt="" />
+        </header>
+        <form className="formName">
 
-        <label htmlFor="email">
-          E-mail:
-          <input
-            data-testid="email-input"
-            type="email"
-            id="email"
-            name="email"
-            value={ email }
-            onChange={ this.handleChange }
-          />
-        </label>
+          <label htmlFor="email" className="labelName">
+            E-mail:
+            <input
+              className="inputName"
+              data-testid="email-input"
+              type="email"
+              id="email"
+              name="email"
+              value={ email }
+              onChange={ this.handleChange }
+              placeholder="Your e-mail"
+            />
+          </label>
 
-        <label htmlFor="password">
-          Senha:
-          <input
-            data-testid="password-input"
-            type="password"
-            id="password"
-            name="password"
-            value={ password }
-            onChange={ this.handleChange }
-          />
-        </label>
+          <label htmlFor="password" className="labelName">
+            Senha:
+            <input
+              className="inputName"
+              data-testid="password-input"
+              type="password"
+              id="password"
+              name="password"
+              value={ password }
+              onChange={ this.handleChange }
+              placeholder="Password"
+            />
+          </label>
 
-        <button
-          type="submit"
-          id="submit-btn"
-          onClick={ this.handleClick }
-          disabled={ !enableBtn }
-        >
-          Entrar
-        </button>
+          <button
+            className="buttonName"
+            type="submit"
+            id="submit-btn"
+            onClick={ this.handleClick }
+            disabled={ !enableBtn }
+          >
+            Entrar
+          </button>
 
-      </form>
+        </form>
+      </div>
+
     );
   }
 }

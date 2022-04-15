@@ -1,0 +1,117 @@
+.walletHeader{
+  /* text-align: center; */
+  background-color: rgba(242, 159, 5, 0.5);
+  height: 40px;
+  border-radius: 10px;
+  /* border: solid; */
+  padding: 10px;
+  /* position:initial; */
+  border-radius: 10px;
+
+  
+}
+
+.titleHeader {
+  text-align: center;
+  margin-top: -32px;
+  padding: 2px;
+  font-size: larger;
+  color: #F0F0F2;
+}
+
+.containerHeader {
+  background-image: url("./images/cofrehp.jpg");
+  position: absolute;
+  height:100%;
+  width: 100%;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  align-items: center;
+}
+
+.infoHeader {
+  font-size: medium;
+  /* margin-top: -20px; */
+  background-color: rgba(242, 159, 5, 0.5);
+  border-radius: 10px;
+  padding: 5px;
+  color: #F0F0F2;
+  
+}
+p {
+  display: inline;
+
+}
+
+.formWalletName{
+  background-color: rgba(89, 25, 2, 0.5);
+  margin: 50px 10px;
+  flex-direction: column;
+  /* margin-right: 70%; */
+  padding: 14px;
+  display: list-item;
+  height: 45%;
+  width: 8%;
+  border-radius: 10px;
+  /* margin-right: 40px; */
+}
+
+.inputWallet {
+  width: 90%;
+  padding: 3px 5px;
+  /* margin: 10px; */
+  /* display: flex; */
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  /* box-sizing: border-box; */
+  /* align-items: center; */
+  margin-top: 3px;
+}
+.labelWallet {
+	/* margin-bottom: 20px; */
+  color: #F0F0F2;
+  margin: -4px;
+  font-size: 16px;
+  padding: 5px;
+
+}
+
+select {
+  /* appearance: none; */
+  /* -webkit-appearance: none; */
+  /* -moz-appearance: none; */
+  border: 1px solid #ccc;
+  font-size: 12px;
+  /* padding-right: 3px; */
+  padding: 3px 5px;
+  border-radius: 10px;
+  margin-top: 5px;
+}
+
+.walletButton {
+  /* display: flex; */
+	/* margin: 10px; */
+	border: 1px solid #ccc;
+  border-radius: 10px;
+  opacity: 1;
+  margin-left: 5%;
+  margin-top: 20px;
+}
+
+.tableName{
+  background-color: aqua;
+  margin-left: 170px;
+  margin-top: -395px;
+  border-radius: 10px;
+  color: #F0F0F2;
+  background-color: rgba(89, 25, 2, 0.5);
+
+}
+tr {
+  text-align: center;
+  background-color: rgba(242, 159, 5, 0.5);
+}
+th{
+  background-color: rgba(89, 25, 2);
+
+}
